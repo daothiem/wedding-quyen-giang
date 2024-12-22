@@ -7,16 +7,16 @@ var THEMEMASCOT = {};
   /* ---------------------------------------------------------------------- */
   /* --------------------------- Start Demo Switcher  --------------------- */
   /* ---------------------------------------------------------------------- */
-  var showSwitcher = true;
+  /*var showSwitcher = true;
   var $body = $('body');
   var $style_switcher = $('#style-switcher');
-  if( !$style_switcher.length && showSwitcher ) {
+  /!*if( !$style_switcher.length && showSwitcher ) {
       $.ajax({
           url: "color-switcher/style-switcher.html",
           success: function (data) { $body.append(data); },
           dataType: 'html'
       });
-  }
+  }*!/*/
   /* ---------------------------------------------------------------------- */
   /* ----------------------------- En Demo Switcher  ---------------------- */
   /* ---------------------------------------------------------------------- */
@@ -41,14 +41,14 @@ var THEMEMASCOT = {};
       }
     }
   };
-	
+
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
 		if($('.preloader').length){
 			$('.preloader').delay(200).fadeOut(500);
 		}
 	}
-	
+
 	//Update Header Style and Scroll to Top
 	function headerStyle() {
 		if($('.main-header').length){
@@ -93,15 +93,15 @@ var THEMEMASCOT = {};
 
 	//Mobile Nav Hide Show
 	if($('.mobile-menu').length){
-		
+
 		var mobileMenuContent = $('.main-header .main-menu .navigation').html();
-		
+
 		$('.mobile-menu .navigation').append(mobileMenuContent);
 		$('.sticky-header .navigation').append(mobileMenuContent);
 		$('.mobile-menu .close-btn').on('click', function() {
 			$('body').removeClass('mobile-menu-visible');
 		});
-		
+
 		//Dropdown Button
 		$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
 			$(this).prev('ul').slideToggle(500);
@@ -130,7 +130,7 @@ var THEMEMASCOT = {};
 		});
 	}
 
-	
+
 	// Single Item Carousel
 	if ($('.single-item-carousel').length) {
 		$('.single-item-carousel').owlCarousel({
@@ -444,7 +444,7 @@ var THEMEMASCOT = {};
 			  },
 		});
 	}
-	
+
 
 	//Testimonial-carousel
 	if ($('.gallery-slider').length) {
@@ -470,9 +470,9 @@ var THEMEMASCOT = {};
 			  },
 		});
 	}
-	
+
 	//Event Countdown Timer
-	if($('.time-countdown').length){  
+	if($('.time-countdown').length){
 		$('.time-countdown').each(function() {
 		var $this = $(this), finalDate = $(this).data('countdown');
 		$this.countdown(finalDate, function(event) {
@@ -482,7 +482,7 @@ var THEMEMASCOT = {};
 	}
 
 	//Event Countdown Timer / With Months
-	if($('.time-countdown-two').length){  
+	if($('.time-countdown-two').length){
 		$('.time-countdown-two').each(function() {
 		var $this = $(this), finalDate = $(this).data('countdown');
 		$this.countdown(finalDate, function(event) {
@@ -522,11 +522,11 @@ var THEMEMASCOT = {};
 	//Fact Counter + Text Count
 	if($('.count-box').length){
 		$('.count-box').appear(function(){
-	
+
 			var $t = $(this),
 				n = $t.find(".count-text").attr("data-stop"),
 				r = parseInt($t.find(".count-text").attr("data-speed"), 10);
-				
+
 			if (!$t.hasClass("counted")) {
 				$t.addClass("counted");
 				$({
@@ -544,7 +544,7 @@ var THEMEMASCOT = {};
 					}
 				});
 			}
-			
+
 		},{accY: 0});
 	}
 
@@ -590,8 +590,8 @@ var THEMEMASCOT = {};
         .next()
         .val(+$(this).next().val() - 1);
     }
-   }); 
-   
+   });
+
 	//Price Range Slider
 	if($('.price-range-slider').length){
 		$( ".price-range-slider" ).slider({
@@ -627,7 +627,7 @@ var THEMEMASCOT = {};
 		});
 	}
 
-	
+
 	//LightBox / Fancybox
 	if($('.lightbox-image').length) {
 		$('.lightbox-image').fancybox({
@@ -647,10 +647,10 @@ var THEMEMASCOT = {};
 		   $('html, body').animate({
 			   scrollTop: $(target).offset().top
 			 }, 0);
-	
+
 		});
 	}
-	
+
 	// Elements Animation
 	if($('.wow').length){
 		var wow = new WOW(
@@ -692,22 +692,22 @@ var THEMEMASCOT = {};
 	    });
 	  }
 	}
-	
+
 /* ==========================================================================
    When document is Scrollig, do
    ========================================================================== */
-	
+
 	$(window).on('scroll', function() {
 		headerStyle();
 		TM_activateMenuItemOnReach();
 	});
-	
+
 /* ==========================================================================
    When document is loading, do
    ========================================================================== */
-	
+
 	$(window).on('load', function() {
 		handlePreloader();
-	});	
+	});
 
 })(window.jQuery);
