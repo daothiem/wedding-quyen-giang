@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
 <!-- Mirrored from html.kodesolution.com/2023/wendola-html/index-2-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Dec 2024 10:14:05 GMT -->
 <head>
@@ -20,7 +20,6 @@
 </head>
 
 <body>
-
 <div class="page-wrapper">
 
   <!-- Preloader -->
@@ -688,6 +687,7 @@
 </audio>
 
 <!-- Scroll To Top -->
+<button id="toggle-audio" class="radio-icon">🔊</button>
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
 <script data-cfasync="false" src="https://html.kodesolution.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
@@ -700,6 +700,20 @@
 <script src="js/appear.js"></script>
 <script src="js/owl.js"></script>
 <script src="js/script.js"></script>
+<script>
+  const audio = document.getElementById("background-audio");
+  const toggleAudio = document.getElementById("toggle-audio");
+
+  toggleAudio.addEventListener("click", function () {
+    if (audio.paused) {
+      audio.play();
+      toggleAudio.textContent = "🔊";
+    } else {
+      audio.pause();
+      toggleAudio.textContent = "🔇";
+    }
+  });
+</script>
 </body>
 
 <!-- Mirrored from html.kodesolution.com/2023/wendola-html/index-2-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Dec 2024 10:14:05 GMT -->
